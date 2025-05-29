@@ -4,8 +4,6 @@ import { ExpressAdapter } from '@nestjs/platform-express';
 import { Request, Response } from 'express';
 
 /**
- * This section handles conditional importing of the `express` module due to differences between runtime environments:
- *
  * - In local development (Node.js with NestJS), CommonJS (`require`) is used, as NestJS does not fully support native ESModules.
  * - In the Vercel production environment (which requires ESModules for serverless functions), dynamic `await import()` is used.
  *
