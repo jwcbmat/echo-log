@@ -1,0 +1,90 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #121212;
+  color: #e0e0e0;
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+.wrapper {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+}
+
+header {
+  border-bottom: 1px solid #333;
+  padding: 1rem 0;
+  margin-bottom: 2rem;
+}
+
+.site-title {
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: #fff;
+  text-decoration: none;
+  letter-spacing: 0.05em;
+}
+
+.site-title:hover,
+.site-title:focus {
+  color: #90caf9;
+  outline: none;
+}
+
+h2 {
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  color: #ffffffcc;
+}
+
+#post-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.post-item {
+  padding: 0;
+  margin: 0;
+}
+
+.post-date {
+  display: block;
+  font-size: 0.875rem;
+  color: #888;
+  margin-bottom: 0.15rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.post-title {
+  font-weight: 600;
+  font-size: 1.25rem;
+  color: #e0e0e0;
+  transition: color 0.3s ease, transform 0.2s ease;
+  margin: 0;
+}
+
+.post-title a {
+  color: inherit;
+  text-decoration: none;
+  display: inline-block;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.post-title a:hover,
+.post-title a:focus {
+  color: #90caf9;
+  text-decoration: underline;
+  transform: scale(1.05);
+  outline: none;
+  cursor: pointer;
+}

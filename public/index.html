@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>bronzor-blog</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="wrapper">
+        <a class="site-title" rel="author" href="/">echo-log</a>
+      </div>
+    </header>
+    <main class="wrapper">
+      <h2>Blog Posts</h2>
+      <ul id="post-list" tabindex="0"></ul>
+    </main>
+    <script>
+      fetch('/posts')
+        .then(res => res.json())
+        .then(posts => {
+          const list = document.getElementById('post-list');
+          posts.forEach(({ date, slug, title }) => {
+            const li = document.createElement('li');
+            li.classList.add('post-item');
+            li.innerHTML = `
+              <time datetime="${date}" class="post-date">${new Date(date).toLocaleDateString()}</time>
+              <h3 class="post-title"><a href="/posts/${slug}">${title}</a></h3>
+            `;
+            list.appendChild(li);
+          });
+        });
+    </script>
+  </body>
+</html>
