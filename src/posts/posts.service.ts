@@ -2,7 +2,6 @@ import { Injectable } from '@nestjs/common';
 import { readdirSync, readFileSync } from 'fs';
 import { join } from 'path';
 
-console.log(join(process.cwd(), 'posts'))
 @Injectable()
 export class PostsService {
   private postsDir = join(process.cwd(), 'posts');
