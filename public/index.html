@@ -26,7 +26,7 @@
             const li = document.createElement('li');
             li.classList.add('post-item');
             li.innerHTML = `
-              <time datetime="${date}" class="post-date">${new Date(date).toLocaleDateString('PT-BR')}</time>
+              <time datetime="${date}" class="post-date">${new Date(date).toLocaleDateString('pt-BR')}</time>
               <h3 class="post-title"><a href="/posts/${slug}">${title}</a></h3>
             `;
             list.appendChild(li);

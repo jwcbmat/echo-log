@@ -19,7 +19,7 @@ export class PostsController {
 
     const parts = slug.split('-');
     const dateStr = `${parts[0]}-${parts[1]}-${parts[2]}`;
-    const date = new Date(dateStr).toLocaleDateString();
+    const date = new Date(dateStr).toLocaleDateString('pt-BR');
     const title = parts.slice(3).join(' ').replace(/-/g, ' ');
 
     res.send(`
