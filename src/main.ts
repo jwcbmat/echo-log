@@ -1,7 +1,7 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { ExpressAdapter } from '@nestjs/platform-express';
-import { Request, Response } from 'express';
+import type { Express, Request, Response } from 'express';
 
 /**
  * - In local development (Node.js with NestJS), CommonJS (`require`) is used, as NestJS does not fully support native ESModules.
@@ -15,8 +15,7 @@ if (!process.env.VERCEL) {
   express = require('express');
 }
 
-let server: any;
-
+let server: Express;
 async function bootstrap() {
   if (process.env.VERCEL) {
     express = (await import('express')).default;
@@ -38,6 +37,7 @@ const handler = async (req: Request, res: Response) => {
   if (!server) {
     server = await bootstrap();
   }
+
   return server(req, res);
 };
 
